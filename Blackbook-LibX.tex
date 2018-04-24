@@ -1,0 +1,1222 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{setspace}
+\usepackage{adjustbox}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{mathptmx}
+\usepackage[section]{placeins}
+\usepackage{pdfpages}
+\graphicspath{ {C:\Users\Owner\Desktop\finalyearproject\blackbook} }
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+\begin{document}
+
+\pagenumbering{Roman}
+\begin{titlepage}
+
+\vspace*{0.25cm}
+{\centering \onehalfspacing
+{\Large\textbf {LibX- An Automated Bibliotheca}}\\
+\vspace{1.5cm}
+\onehalfspacing
+
+
+Submitted in partial fulfillment of the requirement\\
+for the award of the Degree of\\\vspace{1cm}
+{\large\textbf {Bachelor of Engineering in Information Technology }}\\
+by\\
+{\large \textbf {Yash Trivedi (Roll No. 14101A0067)}}\\
+{\large \textbf {Kartik Kansaria (Roll No. 15101A2001)}}\\
+{\large \textbf {Saurabh Joshi (Roll No. 14101A0066)}}\\
+\vspace{2cm}
+
+Under the Guidance of\\
+\vspace{0.50cm}
+\hspace{.05cm} {\large \textbf {Prof. Deepali Vora}}\\
+{\large \textbf {Department of Information Technology Engineering}}\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm,height=3cm]{vit1.png}
+\end{figure}
+
+\begin{comment}
+\vspace{1cm}
+\hspace{.05cm}
+\hspace{.03cm}
+hspace was 7.25 initially for year 2015-17
+\end{comment}
+\onehalfspacing
+
+Vidyalankar Institute of Technology\\
+Wadala(E), Mumbai-400437\\
+University of Mumbai\\
+\hspace{5.9cm}2017 - 2018}\\
+\end{titlepage}
+
+
+\pagebreak
+
+
+\begin{center}
+\vspace*{0.25cm}
+  {\centering \onehalfspacing
+    {\large\textbf{CERTIFICATE OF APPROVAL}}\\
+        \vspace{1cm}\onehalfspacing
+
+        This is to certify that the project entitled \\
+        {\large\textbf{LibX - An Automated Bibliotheca}}\\
+        \vspace{0.5cm}
+        Is a bonafide work of\\
+        {\large\textbf{Yash Trivedi (Roll No. 14101A0067)}}\\
+        {\large \textbf {Kartik Kansaria (Roll No. 15101A2001)}}\\
+        {\large \textbf {Saurabh Joshi (Roll No. 14101A0066)}}\\
+        \vspace{0.5cm}
+        submitted to the University of Mumbai in partial fulfillment of the requirement for the award of the degree of\\
+        \vspace{0.5cm}
+        {\large\textbf{Undergraduate in Information Technology}}\\
+        \vspace{3cm}
+        \flushleft\text{Guide}
+        \hspace{3cm}
+        \text{Head of Department}
+        \hspace{3cm}
+        \text{Principal}
+  }
+\end{center}
+
+
+\pagebreak
+
+
+\begin{center}
+\vspace*{0.25cm}
+    {\centering\onehalfspacing
+    {\large\textbf{Project Report Approval for B.E.}}\\
+        \vspace{1cm}
+
+        \justify
+        The project report entitled LibX - An Automated Bibliotheca by \\
+        1.Yash Trivedi (14101A0067)\\
+        2.Kartik Kansaria(15101A2001)\\
+        3.Saurabh Joshi(14101A0066)\\
+        is approved for the \textbf{Bachelor of Engineering in Information Technology.}\\
+        \vspace{1cm}
+
+        \hspace{7cm} \text{Examiners:}\\
+
+        \hspace{7cm} \text{1.\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}\\
+
+        \hspace{7cm} \text{2.\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}\\
+        \flushleft \text{Date:      }\\
+        \flushleft \text{Place:     }
+
+    }
+\end{center}
+
+\pagebreak
+
+\begin{center}
+\vspace*{0.25cm}
+    {\centering
+    {\large\textbf{Declaration}}\\
+    \justify
+    I declare that this written submission represents my ideas in my own words and where others' ideas or words have been included, I have adequately cited and referenced the original sources. I also declare that I have adhered to all principles of academic honesty and integrity and have not misrepresented or fabricated or falsified any idea/data/fact/source in my submission. I understand that any violation of the above will be cause for disciplinary action by the Institute and can also evoke penal action from the sources which have thus not been properly cited or from whom proper permission has not been taken when needed.\\
+
+\vspace{0.5cm}
+\begin{table}[h!]
+\centering
+\begin{tabular}{c   c   c   c}
+
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Sr No.   & Name of Student   & Roll No   & Signature \\
+
+  1 &  Yash Trivedi  & 14101A0067   &    \\
+
+  2 &  Kartik Kansaria  & 15101A2001  &  \\
+
+  3 &  Saurabh Joshi  & 14101A0066   &   \\
+
+
+\end{tabular}
+\end{table}
+
+\vspace{3cm}
+
+\flushleft Date:\\
+    }
+\end{center}
+
+\pagebreak
+\begin{center}
+\vspace*{0.25cm}
+    {\centering
+    {\large\textbf{Acknowledgements}}\\
+    }
+\end{center}
+\par \justify We are pleased to present LibX- An automated Bibliotheca project and take this opportunity to express our profound gratitude to all those people who helped us in this project. We express our deepest gratitude towards our project guide Prof. Deepali Vora for her valuable and timely advice during the various phases in our project. We thank our Head of Department, Principal and our college staff for permitting us to use computers in the lab as and when required. We would also like to thank our project co-coordinator for providing us with all proper facilities and support. We would also like to thank the staff members and lab assistants. Finally we would like to thank everyone who has helped us directly or indirectly in our project.
+\\
+
+\pagebreak
+
+
+
+  \vspace*{0.25cm}
+  {\centering
+  {\large\textbf{Abstract or Executive Summary}}\\
+\par\justify
+General recommendation systems are used to suggest appropriate items to the users. The book recommendation systems analyzes the content of the book or reviews of readers to suggest apt choice for the user.
+\par\justify
+Book recommendation systems are used to suggest a novice user with the right choice and also simplify the complex decision making process by extracting information from the knowledge base. These systems implement automation which reduce existing workload on the current organization and at the same time create a knowledge base which very useful for information extraction.
+\par\justify
+Libx - An Automated Bibliotheca is basically a book recommendation system which will be used by students and staff to access the library facility such as books and papers and exam notes.It will provide the best of reference books through recommendation and feedback by others.Recommender systems help in automating and making decisions based on the collective knowledge and lay the foundation of solving decision based approaches in the future on various streams from information technology to robotics.
+  }
+
+
+\pagebreak
+
+\tableofcontents
+\pagenumbering{arabic}
+
+\listoffigures
+
+\listoftables
+
+
+
+\chapter{Introduction}
+
+\par This chapter of the book reflects upon recommender systems in general and talks more about the outline of the book/ project report. The user would also get to know the problem definition and the scope of the project through which he can understand the use and application of the given system in concise. Recommender systems as a concept are used at the heart of this project and it aims to inform the reader about in summary. \\
+
+\section{Recommender Systems}
+\par Recommender systems or recommendation systems are a subclass of information filtering system that seek to predict the 'rating' or 'preference' that user would give to an item . Recommender systems have become extremely common in recent years, and are applied in a variety of applications.Recommender systems assist and augment this natural social process to help people sift through available books.Usually, a recommender system providing fast and accurate recommendations will attract the interest of students and bring benefits to companies and organization.Usually Recommender systems produce a list of recommendations in one of three ways: Collaborative filtering (CF), Content-based filtering, and Hybrid recommender systems.[1]\\
+
+\par Recommender systems improve access to relevant products and information by making personalized suggestions based on previous examples of a user's likes and dislikes. Most existing recommender systems use social iterating methods that base recommendations on other users' preferences. By contrast, content-based methods use information about an item itself to make suggestions. This approach has the advantage of being able to recommend previously unrated items to users with unique interests and to provide explanations for its recommendations. [2]\\
+
+\par The purpose of this project is to utilize the resources provided in the library to it’s most optimum and at the same time to create a centralized repository which helps everyone to access papers and recommends the best reference books based on the reviews by everyone.\\
+
+
+\par Apart from that it aims to spread awareness of a variety of resources provided by the library. At the same time our teachers can also load crucial exam notes and research papers required by the students.In our ever increasing world maintaining information is getting more complex in nature and at the same time are the best choices of data among it. Recommender systems help us easing the task by making the right choice through a collection of knowledge from different users.\\
+
+\section{Problem Definition}
+
+\par The project was ideated from the necessity to make the usage of our college library more better and to create awareness of the best resources contained in it through the form of recommendations by different users across multiple levels there by effectively creating a quality control parameter for different books and notes contained in them. \\
+
+\par Created system has also a central repository for books , lecture notes , research system which suffices the need for storage of such documents together so it can be accessed by teachers anytime as needed for sending assignments.\\
+
+\par Also it address the problem of lack of knowledge students had about the reference books in the library and also fulfills the lack of a digital interface which 81 percent had asked for in our survey.[21]\\
+
+\section{Scope }
+
+\par Project scope is the work required to output a project’s deliverable. Change happens, and project scope management includes the process to manage scope changes and make sure the project will still come in on time and within budget. Scope is often defined by a work breakdown structure, and changes should take place only through formal change control procedures.[20]\\
+
+\begin{enumerate}
+  \item Creation of a centralized repository of books,research papers and notes.
+  \item Text Summarization of books, research papers and notes.
+  \item Text Mining on content and data extraction from it.
+  \item Recommendation based on reviews.
+\end{enumerate}
+
+\section{Outline of Report}
+
+\par This section acquaints the reader about the outline of each chapter and helps him/her to summarize the contents of all the chapters written in the black book.It also gives an idea about the parts discussed in each chapter. \\
+
+\par \textbf{Chapter 2} : Literature Survey is discussed here in detail and sub-sections include content about book recommendation systems, Study of existing systems, Application of our current system. This chapter basically informs the user about the existing systems and the nature of book recommendation systems in their current form.\\
+
+\par \textbf{Chapter 3} : It showcases System Design of our current project , with diagrams such as UML, UseCase , DFD , Sequential,Activity and Table Schema of the various databases used in the project. It also tells the user about the methodology through which the project was developed and improved in various iterations. \\
+
+\par \textbf{Chapter 4} : Experiments and Results of the project are discussed further in this chapter and accompanying screenshots are provided with it. The technology used and various platform tools are highlighted in this chapter required to create the project. Also the final results generated are compared with the existing systems and the feedback procured about the project.\\
+
+\par \textbf{Chapter 5} :  Conclusion and recommendations derives the conclusion of the project and the summarizes the various feedbacks gathered under literature survey and after the final creation of the project.\\
+
+\par \textbf{Chapter 6} : Future Scope deals with all the modifications/ improvements or future analysis that be can done on the existing project to gather useful data.\\
+
+\par \textbf{Chapter 7} : References help the user to gather relevant data to understand more about the project and the topics used in it. All the references are cited according to the articles or research papers when they were published and the relevant links provided with it. If any authors are available for a reference they are also cited accordingly. \\
+
+\par \textbf{Chapter 8} : This chapter deals with information that is supplementary and not deals strictly with the main body of the project.It contains extra details of the project and the various roles that the team members helped during the creation of the project. \\
+
+
+
+
+\chapter{Literature Survey}
+
+
+    \par This chapter discusses about all the literature reviewed for the paper and existing systems were scrutinized to help lay the guidelines for the creation of the current one. We also see the literature feedback here and applications of the current system. \\
+
+  \section{Book Recommender Systems }
+  \begin{enumerate} %this one is open till the end of lit survey and is numbering
+  \item Recommendation systems\\
+        Recommendation systems are widely used to recommend products to the end users that are most appropriate. Online book selling websites nowadays are competing with each other by many means. Recommendation system is one of the stronger tools to increase profit and retaining buyer. The book recommendation system must recommend books that are of buyer’s interest.[16]\\
+        Importance of recommendation\\
+        Recommendations are being regarded as a new key measure of determining whether or not products, services and business are successful. From prior research, we know that 92 percent of all consumers report that a word-of-mouth recommendation is the “leading reason they buy a product or service”[17]\\
+        Book Recommendation Systems \\
+        They take in multiple parameters for calculation from feedback and are responsible to list books based on the scores calculated from those multiple parameters and the feedback given by the users. \\
+
+  \section{Existing Recommender Systems}
+    \item Existing recommendation systems with features are \\
+    \begin{itemize} %this one is bullets
+      \item GoodReads (Web-Based, Free)\\
+            GoodReads is a book lover's site with great features like interviews with authors, book trivia, book swap events, and more. Most notable however are the lists. We're not talking lists of questionable quality by one person, we're talking lists compiled with the inputs of thousands and thousands of users. Rather than get one person's opinion of the top humorous non-fiction travel books you get the composite opinion of 20,000.[18]\\
+
+      \item Amazon (Web-Based, Free)\\
+            The power of the Amazon.com recommendation engine is in the old saying, "Money talks". Sure Amazon has a list tool where people can put together lists like "Best Summer Reads", but where most people get their recommendations from Amazon is the "Customers Who Bought This..." suggestions.[18]\\
+
+      \item Shelfari (Web-Based, Free)\\
+            Shelfari is a social network built around books. You can use the service to browse reviews and get suggested additions to your reading list but the site really shines when you participate and add your library contents and reviews into the mix.[18]
+
+    \end{itemize}
+  \end{enumerate}
+
+\begin{enumerate}
+
+  \item Improvisation in the current system has facility of student login which would allow them to issue books saving multiple rounds to the library.
+  \item As there is no digital interface available for library, students can register for the books.
+  \item Improvisation in the current system has option of lecture notes or papers that can be uploaded by professors or admin.
+  \item Improvisation in the current system has facility for book request and suggestions where as in proposed system after logging in to their accounts student can request books as well as provide suggestions to improve library(such as feedback and giving rates to book), furthermore these suggestions are taken into consideration and weighed for example a professor’s review would have more weighted than a student’s review.
+  \item Improvisation in the current system has recommendation on book name
+  \item Proposed System has the facility for student logins and the online reservation of books.It will have unique access to books,lecture notes and reference papers.
+  \item Student need to do multiple rounds of library to check if books are available or not in the existing system.It will implement a facility for student feedback.These suggestions are taken into consideration and weighed unlike the existing systems.
+\end{enumerate}
+
+  \section{Current System}
+  Current feature has features like:
+  \begin{enumerate}
+    \item Easy to handle and feasible - The project interface is very user friendly and includes directions for the user to navigate through the interface.
+    \item Fast retrieve to database - PHP has various in - built functions which help to speed up it's processing time.
+    \item A smaller amount of error - RAKE usually calculates the degree of association between keywords thereby generating less error prone associations.
+    \item Easy access to all information - The books can be searched using a special search function indexing keywords and titles.
+    \item Look and Feel Environment - Bootstrap enhances the look and feel of the project.
+    \item Rapid Transaction - System helps to serve requests at a quick pace.
+    \item Cost Reduction - System can be hosted on the internal server thereby saving costs for a dedicated 24/7 system.
+    \item Recommendation of book - Is supported by recommendation matrix created in php.
+    \item Simple and Efficient - Ease of use makes it simple and efficient.
+  \end{enumerate}
+
+  \pagebreak
+
+\section{Review of the Existing System}
+\begin{enumerate}
+   \item Existing papers were used to refer for references and understanding recommender systems in detail are provided below.The recommender systems described in other papers were carefully studied and understood in detail.
+       
+   \item Every paper studied carries inference understood by the developers from it , which not only helps to establish the brief of the paper but also helps understand it.
+       
+   \item Different technologies such as RFID systems and Recommender systems were studied from the given articles and research papers.
+       
+   \item Usually the existing system is a manually maintained system and the papers helped to integrate some features and functionality with varying degrees of content.
+       
+   \item Existing Systems may manage or catalog the library books and usually had no quality control parameters to understand and classify output accordingly.
+       
+   \item The matrix of recommendation classifier is a unique feature found in our current system over the existing system studied across various literature reviews.
+   
+   \item Other existing systems helped us to showcase and find some limitations or drawbacks of different recommender systems some of which problems were also seen being replicated in our system. An case of example can be made in the Cold Start problem which was overcome by filling dummy data and then working with recommender system.
+       
+   \item The dummy data taken was in the form of feedbacks and can be easily changed with authentic ones to train the system to give the highest score to the best books in for a particular search functionality.
+\end{enumerate}   
+    \begin{table}[h!]
+        \caption{Articles Reviewed}
+
+        \begin{adjustbox}{max width=\textwidth}
+        \begin{tabular}{|c|p{8cm}|p{8cm}|}
+        \hline
+        % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+        \textbf{Sr.No.} & \textbf{Title of Paper} & \textbf{Inference}\\
+        \hline
+
+        1 & The Use of Machine Learning Algorithms in Recommender Systems: A Systematic Review Ivens Portugal, Paulo Alencar, Donald Cowan [3]
+        & This paper demonstrates Bayesian and Decision tree algorithms are widely used in recommender systems because of their relative simplicity.\\
+        \hline
+
+        2 & Implementation of Automated Library Management System in the School  of Chemistry Bharathidasan University using Koha Open Source Software Neelakandan.B, Duraisekar. S, Balasubramani.R, Srinivasa Ragavan[4]
+        & To develop and updated database  of Books  and other resources. To implement automated system using Koha Library Integrated Open Source  Software.Provide circulation and availability of books functions in the automated library.\\
+        \hline
+
+        3 & Personalized Book Recommendation System,Michelle Craig[5]
+        & To solve real life challenges inspired by companies like Netflix in recommendation systems given to other users and how recommendation systems were implemented to solve them.\\
+        \hline
+
+        4 & Library Management System using RFID ,AUNG KYAW SAN , CHAW MYAT NEW [6]
+        & 1.An End – User should be able to login into the system after their registration done by the Administrator.
+
+        2.Accession number, roll number and teacher identification must all be unique as they form the primary keys of the respective tables \\
+        \hline
+
+        5 & Real-World Recommender Systems for Academia : The Pain and Gain in Building, Operating, and Researching them; Joeran Beel and Siddharth Dinesh [7] & The recommender system features a comprehensive user modeling engine, and uses Apache Lucene/Solr for content-based filtering.\\
+        \hline
+
+         6 & The Case for Institutional Repositories: A SPARC Position Paper;Raym Crow[8]
+        & Imparts the benefits and needs to have an institutional repository and constructs a benefit analysis for institutional repositories. \\
+        \hline
+
+        7 & Library Management System Based on Recommendation System,Fu Jia and Yan Shi [9]
+        & From the application of recommendation system to library management system, the paper analyzes the key technology, makes application research on book recommendation system based on content filtering and collaborative filtering, and proposes collaborative filtering algorithm which is an improved recommendation algorithm. \\
+        \hline
+
+        8 & Electronics Library Management System from the Website , Dr.Hussein Abdul-Ridha Mohammed , Rasha Asaad Kamil[10]
+        & An electronic library is a type of information retrieval system. In this work MySQL database and php dynamic 3-tire website is design. The tested on this website done as a college virtual library it provide fast and secured system.\\
+        \hline
+
+        9 & A Security Mechanism for library management system using low cost RFID tags,V.NagaLakshmi,I.Rameshbabu, D.Lalitha Bhaskari [11]
+        & 1.Active RFID tags have both an on-tag power source and an active transmitter, offer superior performance and higher range.
+        2.Passive tags have no power source and no on tag transmitter, which gives them a range of less than 10 meters.\\
+        \hline
+        
+        10 & RFID Based Library Management System,Dhanalakshmi M, Uppala Mamatha [12]
+        & This paper presents the experiments conducted to set up RFID based Library Management Systems.\\
+        \hline
+
+        11 & Data Mining: A Book Recommender System Using Frequent Pattern Algorithm; Joshua J.V.,Alao O.D.,Adebayo A.O., Onanuga G.A.,Ehinlafa E.O., Ajayi O.E[13]
+        & Data pre-processing and analysis was carried out using frequent pattern growth algorithm to generate frequent patterns.\\
+        \hline
+
+        \end{tabular}
+        \end{adjustbox}
+    \end{table}
+
+\pagebreak
+
+
+
+\section{Application of the System }
+\begin{enumerate}
+  \item System can act as a quality control barrier by helping to only select those books which have a good recommendation
+  \item It helps to act a central repository to store notes and research papers.
+  \item It provides an digital interface.
+  \item Saves time of multiple trips to the library.
+  \item Information collected can be used to mine and improve the process further.
+\end{enumerate}
+
+\pagebreak
+
+\section{Literature Survey Feedback}
+\begin{enumerate}
+  \item Survey was created to gauge student feedback and gain information about the proposed system and its related areas from the people.The extract from each question are provided below. \\
+\end{enumerate}
+
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=6cm]{LitSur1.jpg}
+    \caption{Most people use library only during exams}
+  \end{figure}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=7cm]{LitSur2.jpg}
+    \caption{Library is accessible easily}
+  \end{figure}
+
+  \pagebreak
+
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=7cm]{LitSur3.jpg}
+    \caption{ERP library help service is not known to many people}
+  \end{figure}
+
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=8cm]{LitSur4.jpg}
+    \caption{Most of the students agree for a need of digital interface of library resources }
+  \end{figure}
+
+  \pagebreak
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=8cm]{LitSur5.jpg}
+    \caption{Rarely people visit other libraries in the city actively}
+  \end{figure}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=7cm]{LitSur6.jpg}
+    \caption{A strong majority of students would want a recommender based system}
+  \end{figure}
+  
+  \subsection{Timeline}
+    \begin{enumerate}
+      \item The importance of a project deadline is showcased by actively tracking our project through the creation of          timelines and at the same time rigourously following the schedule.
+      \item It emphasizes the need to complete a project in a given schedule and expounds the importance of it in a real world scenario with deadlines.
+      \item Also it highlights and helps to allocate time to all phases of your project from creation to execution and testing it respectively.
+    \end{enumerate}
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm,height=10cm]{Timeline2.png}
+    \caption{Timeline of Project [14][15]}
+  \end{figure}
+
+
+\chapter{System Design}
+
+
+\par In this chapter we discuss the crux of the system and how it is designed at it's core. It will also enlighten us about the various components in the system and will help the user to identify the workflow of the process. It contains UseCase, Activity and Data flow diagrams as it's sub components and expounds on each component with it's explanation in detail.Table Schema and Block Diagram are also provided to help the user in understanding the system.\\
+
+\par LibX is a book recommendation system made for an institute or an organization for students or staff.System starts with student registering with the system or software ,once registered he will login to the system,where he can access to books,papers navigation tabs.In books navigation tab user has to search for the book name , and according to his query the book name will be searched in the database , based on his keyword the result of top 5 books will be displayed with most high
+priority , once he selects on issue book , along with book id and his session id , it will be issued taking the current system date , for returning the book user needs to click on the return button ,for his session id all the books he has issued will be displayed if he wish to return any book he will have to manually enter the book id and click on return button , on
+the admin side the issue date and return date will come and based on that it will be calculated .For pages navigation tab user can download a paper be it IEEE or ACM paper and can use it ,these papers will be uploaded by the admin of this system.\\
+
+\par The front end of this design would be created through web development languages such as html5,css3 with the usage of bootstrap to provide a seamless experience and keep up with the modern standards of web development for the end user.Database validation and authentication with backend languages will be maintained by php where it will also be one of the prime tools to handle validation and security.\\
+
+\par The algorithm of choice is rake(python) as it is provided to be one of the most robust algorithms for prediction.\\
+
+\par For text summarization there will be a selection from Rapid abstraction Keyword extraction depending upon the efficiency of either of those algorithms and finally the user can assign his/her own weights to the process by giving a feedback or a review in the system.\\
+
+\section{Methodology}  %Refer this to section 3.3 - Chapter 3%
+\par The need to create a library recommendation model was born from the under utilization of reference books by students in the library. As students felt that a lot of library resources were not utilized properly and many of the students dont even know which books to refer for their own subjects.\\
+
+\par Then a step by step design and analysis was done to create the model of implementation required for the given project which was waterfall model in nature and comparative studies of current and existing recommender systems were performed.\\
+
+\par The next week was creation of various diagrams; survey of IEEE,ACM and other journals were conducted and the information needed was sourced from them.At the same time they were used for references in paper to be published in the future.Comments were sourced from individuals about the project and various algorithms were analyzed.\\
+
+\par Use Case,Activity, State diagrams were created and Implementation was initialized with the front end and various modules were completed sequentially as per design.Reports were executed in parallel to the design and Documentation - A/B were completed.\\
+
+\par Testing,Evaluation of the proposed system was conducted during implementation of the project and parameters like accuracy ,precision and recall were compared to check the effectiveness of the implemented system.Maintenance was in the form of removing bugs in the system by testing all its modules and making sure the system works ideally as
+required under different conditions.Parallely paper publication and presentations were kept in pipeline and conducted for the project.\\
+
+\section{Components}
+
+\par Each component block is explained in detail below -
+\par Database I-Login and Passwords: This database is used to store login
+and passwords in a hashed form and will be used to compare and
+evaluate login of various users and provide them with access according
+to their user level.\\
+
+\par Database II: This database is used to store all other processing content
+and items required to keep the recommender system and site running in
+coordination with DB I.\\
+
+\par Books: Provides access to all types of books and notes uploaded by
+admin. Papers: Provides access to all types of research papers uploaded
+by admin and staff.\\
+
+\par Review,Ratings and Feedback: This component are responsible to indicate weights in the recommender system and provide information accordingly.\\
+
+\par Rake : Rake contains several module such as
+ \begin{enumerate}
+   \item Stop word removal list(removing words which are not important which are normal conjuction and grammer)
+   \item Calculate degree of association (calculates the associativity between 2 keywords takes a decision whether it is one keyword or not)
+   \item Keyword pruning (removes all keyword which have lesser score and do not qualify the threshold).
+   \item Keyword extraction
+ \end{enumerate}
+
+\par Admin: Admin module can be accessed by entering its id and password ,
+admin can insert new book ,upload IEEE AND VIT paper.\\
+
+\section{Modeling}
+\par Waterfall model is feasible for the proposed system. In waterfall model
+idea is to create a system in phases that establishes each phase in detail
+and then moves on to the next phase.This software model has phases like
+Software Requirement,Analysis,
+Design,Coding,Testing,Evaluation,Maintenance.\\
+
+\par Software Requirement: Requirements of the LibX system are understood
+in detail. The existing systems are studied, their drawbacks are
+understood. The domain of the LibX system and its parameters are
+studied in detail. Different data sets available for experimentation are
+studied and finalized. The requirements of both system and software are
+studied and finalized.\\
+
+\par Analysis: The structure of the data required for the system is
+decided.Impact of differ- ent types of models and data is analyzed and
+chosen according to the project.Feasibility tests are done. Different
+software modules and algorithms are finalized. System in- terface is
+decided.\\
+
+\par Design:
+Conceptual map of the whole software development process is constructed Sand
+a process is developed for implementation.\\
+
+\par Coding: The implementation stage is conducted by using code and data
+structures to create the project from analysis and design.\\
+
+\par Testing: The prototype is tested by customer and feedback and other
+modification required are noted.\\
+
+\par Evaluation: The waterfall model modifications are evaluated and new
+features to be added are decided till desired product is obtained.\\
+
+\par Maintenance: Product is made available in market or product is
+delivered to customer. Frequent periodic updates are conducted and
+made sure that the product has all its bugs fixed.\\
+
+\pagebreak 
+\subsection{System Block Diagram}
+
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=15cm,height=15cm]{block1.jpg}
+    \caption{Block diagram of the system}
+  \end{figure}
+
+\pagebreak 
+\FloatBarrier
+\subsection{Use Case Diagram}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=8cm]{usecase.jpg}
+\caption{Use Case Diagram}
+\end{figure}
+
+\pagebreak
+\FloatBarrier
+\subsection{Activity Diagrams }
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=8cm]{act1.jpg}
+\caption{Activity Diagram - Part I}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=8cm]{act2.jpg}
+\caption{Activity Diagram - Part II}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=5cm]{act3.jpg}
+\caption{Activity Diagram - Part III}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=20cm]{actall.jpg}
+\caption{Activity Diagram }
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Data Flow Diagrams }
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=14cm,height=4cm]{dfd0.jpg}
+\caption{DFD Level 0}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=10cm,height=11cm]{data1.png}
+\caption{DFD Level 1}
+\end{figure}
+
+\pagebreak
+\FloatBarrier
+\subsection{ER Diagram}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=16cm,height=8cm]{ER.jpg}
+\caption{Entity Relationship Diagram}
+\end{figure}
+
+
+\pagebreak 
+\FloatBarrier
+\subsection{Table Schemas}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm,height=5cm]{bookm.png}
+\caption{Database Schema 1}
+\end{figure}
+%bookm,tlogin,register,keywords,issuem,bookr,%
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm,height=9cm]{bookr.png}
+\caption{Database Schema 2}
+\end{figure}
+
+\pagebreak
+\FloatBarrier
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm,height=5cm]{tlogin.png}
+\caption{Database Schema 3}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm,height=5cm]{register.png}
+\caption{Database Schema 4}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm,height=5cm]{keywords.png}
+\caption{Database Schema 5}
+\end{figure}
+
+\FloatBarrier
+\subsection{Model Diagram}
+\par This diagram explains the concept of waterfall model to us - \\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{Wmod.jpg}
+  \caption{Waterfall model [19]}
+\end{figure}
+\FloatBarrier
+
+
+
+\chapter{Experiments and Results}
+
+\par This chapter of the book deals with the actual implementation of the project and contains sections like feasiblity study, cost analysis using COCOMO model, technology tools used with their individual advantages and screenshots/ results of the project. The UI/UX design of different webpages will also be showcased in the screenshots and a brief discussion on how the results for recommendation were computed. \\
+
+
+\section{Feasibility Study}
+
+     \par Feasibility of a project is the study that if a project is worth the cost of time and resources and will provide a valuable gain on it’s completion.While many projects may be deemed to be good challenges , they always should be carefully studied for feasibility as if this is not done it may lead to a huge wastage of time and resources for the organization or the individual.
+\begin{description}
+
+  \item[\textbf{1.Technical Feasibility:} ] \hfill \\
+  AWS and other online hosting languages like HTML and CSS need bare minimum and can be feasible easily.Platforms like pycharm might need some prerequisites on operating systems like windows and linux . Machine learning apis might need a connection constantly too their central repository servers. For most of the project has a very good technical feasibility.Some specifics can be uncovered in detail during implementation.
+
+  \item[\textbf{2.Cost Feasibility:} ] \hfill \\
+  Many of the project hosting platforms come at a very low cost and have free trials too.The project can take use of such trials and make sure that the costs are kept as low as possible.Also many of the materials used are of open source nature and keep the cost as low as possible.Hence the cost feasibility of the project is very good.
+
+  \item[\textbf{3.Time Feasibility:} ] \hfill \\
+  The project has a turnover time of 6 months which is used to create modules of machine learning, recommendation systems, front and back end connectivity.Therefore it is deemed to be feasible to a moderate extent in consideration of time.
+
+  \item[\textbf{4.Resource Feasibility:} ] \hfill \\
+  The number of people working for the project and the technical resources provided are deemed to be of adequate in nature after due analysis and hence the resource feasibility for the project is good.\\
+
+
+\end{description}
+
+
+\section{Cost Analysis}
+
+\par Cost estimation using basic COCOMO model is as follows:\\
+
+Number of persons: 3 \\[0.85cm]
+Project type - Organic \\[0.85cm]
+Assume average Salary = Rs.1000 per person \\[0.85cm]
+Efforts are calculated as $a_b(KLOC)^{bb}$
+\begin{eqnarray*}
+Effort & = & 2.4*((10)^{1.05}) \\
+       & = & 26.92 \\[0.75cm]
+\end{eqnarray*}
+SLOC: 10 \\[0.85cm]
+Duration: 8 months \\[0.85cm]
+Cost required to develop the product\begin{eqnarray*}
+ & = & 8*1000*3 \\
+ & = & 24000
+\end{eqnarray*}
+
+
+\section{Technology}
+
+\par This section discusses about the technological tools and the results provided under them, requirements on client and developer side in a variety of different tools that were used and the advantages they provide. In brief it helps the user to understand the tools implemented and use it accordingly. \\
+
+\subsection{Hardware and Software Requirements}
+\par Software and Hardware requirements are the essential tools and components required for the implementation of this project.
+
+\begin{enumerate}
+    \item \textbf{\underline{Developer Front end:}}
+        \begin{itemize}
+            \item Html5,Css3
+            \item Bootstrap v3 or v4 -beta , PHP 5.6 or 7.0
+            \item Sublime text for notepad
+        \end{itemize}
+
+    \item \textbf{\underline{Developer Back end:}}
+        \begin{itemize}
+            \item Testing on PhpMyAdmin v4.7
+            \item Anaconda v3 or Python Pycharm v2017 editors
+        \end{itemize}
+
+
+    \item \textbf{\underline{Server side software requirements:}}
+    \par The server-side system will hold the entire data in a graph database, and must include all functionality to perform operations on this database, receive requests from the clients, evaluate, create and send recommendations etc.
+        \begin{itemize}
+            \item Handle recommendation requests- The server application shall obtain and handle requests for recommendations.
+            \item Store evaluations- The server application shall receive and store music evaluations
+            \item  Data storing -The server application shall be able to store the newly retrieved data to the database.
+            \item Recommend using content based filtering , Recommend using collaborative filtering ,Recommend using contextual collaborative filtering
+        \end{itemize}
+
+    \item \textbf{\underline{Server side Hardware requirements:}}
+        \begin{itemize}
+            \item Xeon processors
+            \item 32 GB RAM
+            \item Lease Line of 50 mbps
+            \item Storage upto 100 TB
+        \end{itemize}
+
+    \item \textbf{\underline{Client side software requirements:}}
+         \begin{itemize}
+            \item Windows 7 or above / Linux Debian OS , CentOS
+            \item Google Chrome v62 and above
+        \end{itemize}
+
+    \item \textbf{\underline{Client side hardware requirements:}}
+        \begin{itemize}
+            \item Minimum pentium processor.Recommended i3,i5 and i7 intel processors
+            \item Nvidia and AMD Radeon minimum 512 mb graphics
+            \item Screen with a resolution of minimum 720p and recommended of 1080p
+            \item Storage upto 100 GB
+            \item 4 GB RAM
+            \item Internet connection of minimum 2 mbps
+        \end{itemize}
+
+\end{enumerate}
+
+
+\subsection{PHP}
+
+\par PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.What distinguishes PHP from something like client-side JavaScript is that the code is executed on the server, generating HTML which is then sent to the client. The client would receive the results of running that script, but would not know what the underlying code was. You can even configure your web server to process all your HTML files with PHP, and then there's really no way that users can tell what you have up your sleeve.[22]\\
+
+\par One of the major advantages PHP offers is platform independence.
+Currently, the list of supported operating systems includes Linux
+(for various CPU architectures), Microsoft Windows, Mac OS X,
+Sun's Solaris (SPARC and Intel), IBM AIX, HP-UX, FreeBSD, Novell
+Netware, SGI IRIX, IBM AS/400, OS/2 and RISC OS.Platform independence has a
+second facet: most PHP applications can therefore be used on
+every computer or internet capable device.[23]\\
+
+Another benefit of PHP is flexibility. Since no compilation is
+needed, it is easy to make changes or bug fixes within minutes
+and to deploy new versions of the program frequently. Additionally,
+it is easy to prototype new applications and concepts; typically
+compared to C or Java , PHP application development takes 50%
+of the time.[23]\\
+
+
+\subsection{PYTHON}
+
+\par Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.[24]\\
+
+\par The diverse application of the Python language is a result of the combination of features which give this language an edge over others. Some of the benefits of programming in Python include:\\
+    \begin{enumerate}
+        \item  Presence of Third Party Modules
+        \item  Extensive Support Libraries
+        \item  Open Source and Community Development
+        \item  Learning Ease and Support Available
+        \item  User-friendly Data Structures
+        \item  Productivity and Speed [25]
+    \end{enumerate}
+
+
+\subsection{HTML and CSS}
+
+\par HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages.HTML is the language for describing the structure of Web pages. HTML gives authors the means to: \\
+\begin{enumerate}
+  \item Publish online documents with headings, text, tables, lists, photos, etc.
+  \item Retrieve online information via hypertext links, at the click of a button.
+  \item Design forms for conducting transactions with remote services, for use in searching for information, making reservations, ordering products, etc.
+  \item Include spread-sheets, video clips, sound clips, and other applications directly in their documents.
+\end{enumerate}
+
+\par CSS is the language for describing the presentation of Web pages, including colors, layout, and fonts. It allows one to adapt the presentation to different types of devices, such as large screens, small screens, or printers. CSS is independent of HTML and can be used with any XML-based markup language.[26] \\
+
+\par Advantages of CSS are :
+\begin{enumerate}
+  \item Easy Maintenance
+  \item Pages load faster
+  \item Superior style to HTML
+\end{enumerate}
+
+
+
+\section{Results with Screenshots}
+\par This section outlines the results achieved through discussion of their screenshots and we would also see in detail how were the recommendations computed at the same time understand the outlines of the RAKE algorithm with its screenshots.\\
+
+\par The user first creates a new account and registers himself , then proceeds to login where the unique id of each user is captured in the session. He can go to papers/video lectures or books as per his needs.If he searches in the books for best recommendation of a book , the search result score is calculated by matching the substring and a count is calculated based on the match in the title and keywords for that book in the data base. This yields two individual scores and one more score is taken in to consideration which is the user rating aggregate of all feedbacks given for that particular book. The final total score contains the addition of these 3 parameters and lists according to the highest score gained. The list is then limited to the top 5 relevant entries. \\
+
+\par RAKE keyword extraction and creation algorithm is used to create keywords from abstracts of papers and descriptions of books, it removes stop-words and calculates the degree of freedom and association between words. It used a limit to bring upto 7 essential keywords so the reader would understand the contents of the specific document by them. At the same time they can be used to generate keywords for all books and store them in the database.\\
+
+\pagebreak
+\subsection{Screenshots}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{140.png}
+  \caption{Home Screen}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{101.png} %always look at the pic type%
+  \caption{Register New User}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{102.png}
+  \caption{Login Existing User}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{136.png}
+  \caption{Papers Module - IEEE/ Inhouse Papers}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{137.png}
+  \caption{Search List of Papers Module}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{130.png}
+  \caption{Book Recommendation Home Page}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{131.png}
+  \caption{Search Bar}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{132.png}
+  \caption{List of Books Calculated with final score}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{133.png}
+  \caption{Selected BookID after clicking Issue}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{134.png}
+  \caption{Return Book/Issue Book Screen}
+\end{figure}
+
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{135.png}
+  \caption{User Feedback Screen}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{138.png}
+  \caption{Paper Search Results}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{139.png}
+  \caption{Impartus Video Repository}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{rakewin.png}
+  \caption{RAKE on Windows with association score}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{rake1.png}
+  \caption{RAKE on Mac }
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{rake2.png}
+  \caption{Output of RAKE}
+\end{figure}
+
+
+
+\chapter{Conclusion and Recommendation}
+\section{Recommendation - Project Feedback}
+\par This section talks about the input statistics which we received after the completion of our project when hosting it in our college project competition called Tantravihar 2018 and lists the feedback received from people and the relevant recommendations with it.\\
+
+\par Some of the statistics derived from it are included below -
+\begin{enumerate}
+  \item 61.1 percent of the respondents rated the project 5.
+  \item 97.2 percent of them rated the project as useful for the library.
+  \item 24 out of 36 responses gave 5/5 for functionality.
+  \item 18 out of 36 responses gave 5/5 for UI.
+  \item 52.8 percent of our user demographic were final year students.
+  \item Suggestion to implement sentiment analysis were provided.
+\end{enumerate}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{feedback.png}
+  \caption{Year}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{feedback2.png}
+  \caption{Department}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{feedback3.png}
+  \caption{UI, Functionality }
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{feedback4.png}
+  \caption{Usefulness of Project}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=13cm,height=8cm]{feedback5.png}
+  \caption{Project Score}
+\end{figure}
+
+
+\section{Conclusion}
+\par Recommender systems are already a huge part of our lives and are tightly integrated into a variety of systems around us. This project not only helped us to enlighten different recommendation techniques by understanding them but also helped to contribute valuable information and data gathered. There are a number of challenges like the cold start problem to face in recommendation systems but the field of recommendation will only get more invaluable to us and help to increase the efficiency of data analysis.\\
+
+\par Managing trust is of essence and a big data point currently debated in the industry as the data should not be able to personally identify the user and keep his privately identifying information secure. At the same time it should be able to provide enough aggregate data to companies such that they can take the best possible decisions to tailor their products accordingly.\\
+
+\par The project also helped to create a digital interface and can be used further as a system in our own library which might be helpful to other students in the future as it creates a quality control standard only refining and providing the books which are the best among that subject area. \\
+
+\chapter{Future Scope}
+\par The future scope of the project can be -
+\begin{enumerate}
+  \item Sentiment analysis on comments for one more rating parameter
+  \item Data Mining based on the user clicks on every book
+  \item Context based Recommendation
+  \item Hardware Dispensing Book Interface
+\end{enumerate}
+
+
+\chapter{References}
+\begin{enumerate}[label={[\arabic*]}]
+
+    \item P. N. Vijaya Kumar , Dr. V. Raghunatha Redd,Vol. 2, Issue 8, August 2014,
+    International Journal of Innovative Research in Computer and \\
+    Communication Engineering
+
+    \item Raymond J. Mooney,Loriene Roy,August 1999,University of Texas Austin, TX 78712
+
+    \item Ivens Portugal ,Paulo Alencar, Donald Cowan, ``The Use of Machine \\
+    Learning Algorithms in Recommender Systems: A Systematic Review'',\\
+    17 Nov 2015,v1
+
+    \item Neelakandan.B, Duraisekar. S, Balasubramani.R, Srinivasa Ragavan,\\
+    ``Implementation of Automated Library Management System in the School
+    of Chemistry Bharathidasan University using Koha Open Source Software'',
+    INTERNATIONAL JOURNAL OF APPLIED ENGINEERING RESEARCH, DINDIGUL Volume 1,
+     No1, 2010
+
+    \item Michelle Craig,{``Personalized Book Recommendation System''},
+    University of Toronto
+
+    \item AUNG KYAW SAN , CHAW MYAT NEW, {``Library Management System using RFID''},
+    ISSN 2319-8885 Vol.03,Issue.08, May-2014
+
+    \item Joeran Beel and Siddharth Dinesh ,{``Real-World Recommender Systems for \\
+    Academia: The Pain and Gain in Building, Operating, and Researching them''},
+    Published in the Proceedings of the 5th International Workshop on
+    Bibliometric-enhanced Information Retrieval (BIR) ,Beel and Dinesh, 2017
+
+    \pagebreak
+
+    \item Raym Crow, {``The Case for Institutional Repositories: A SPARC Position
+    Paper''},August 2002,Research on Institutional Repositories (IRs)
+
+    \item Fu Jia and Yan Shi, {``Library Management System Based on \\
+    Recommendation System''}ICICA 2013, Part II
+
+    \item Dr.Hussein Abdul-Ridha Mohammed , Rasha Asaad Kamil,{``Electronics \\
+    Library Management System from the Website''},Volume 11, Issue 03 March 2015
+
+    \item V.NagaLakshmi , I.Rameshbabu , D.Lalitha Bhaskari, {``A Security \\
+    Mechanism for library management system using low cost RFID tags''},\\
+    February 2007,Research Gate
+
+    \item Dhanalakshmi M, Uppala Mamatha, {`RFID Based Library Management System''},
+    Proceedings of ASCNT 2009, CDAC, Noida, India
+
+    \item Oshua J.V.,Alao O.D.,Adebayo A.O., Onanuga G.A.,Ehinlafa E.O., Ajayi O.E,
+     {``Data Mining: A Book Recommender System Using Frequent \\
+     Pattern Algorithm''},Journal of Software Engineering and Simulation \\
+     Volume 3 ~ Issue 3(2016)
+
+    \item https://www.smartsheet.com/, {`Gantt chart''},September 2017,Gantt chart
+
+    \item https://www.smartsheet.com/, {`Timeline''},September 2017,Timeline
+
+    \item Ms. Sushama Rajpurkar,Ms. Darshana Bhatt,Ms. Pooja Malhotra,
+    IJIRST –International Journal for Innovative Research in Science and Technology|
+     Volume 1 | Issue 11 | April 2015
+
+    \item Paul M. Rand, {`importance of recommendation''},October 4,
+    2013, thesocialmediamonthly.com
+
+    \item Jason Fitzpatrick ,7/25/10,
+    https://lifehacker.com/5595842/five-best-book-recomme-\\
+    ndation-services)
+
+    \item http://www.justtotaltech.co.uk/blog/conceptual-waterfall-model/,
+     Waterfall model, Jun 5 ,2014
+
+     \item https://www.pmi.org/learning/featured-topics/scope ,Project \\
+     Scope from Project Management Institute, 1 December 2017
+
+     \item {``LibX - An Automated Bibliotheca''}, IEEE Xplorer , \\
+     Under publication, 9 December 2017
+
+     \item http://php.net/manual/en/intro-whatis.php ,{`` PHP introduction ''}\\
+     page as on 10 April 2018
+
+     \item https://www.zend.com/topics/overview-on-php.pdf' , Zend \\
+     Whitepaper PHP, Zend Technologies Inc.,page as on  10 April 2018
+
+     \item https://www.python.org/doc/essays/blurb/ , Python Software \\
+     Foundation, page as on 10 April 2018
+
+     \item https://www.invensis.net/blog/it/benefits-of-python-over- \\
+     other-programming-languages/ , Benefits of Python , March 12, 2015
+
+     \item https://www.w3.org/standards/webdesign/htmlcss , HTML \\
+     and CSS , article as on 10 April 2018    %Using &,_ symbol creates problems%
+
+     \item Peter Flom, https://www.quora.com/What-are-the-benefits\\
+     -of-using-LaTeX-over-MS-Word-especially-for-a-scientific-\\
+     researcher-doing-a-lot-of-biology-and-mathematics, July 2 , 2015
+
+     \item https://www.latex-project.org/about/ , The LaTeX project,\\
+     article as on 10 April 2018
+
+     \item https://goo.gl/forms/2SqOZSEioMA0oP852, \\
+     Google Form Responses , 2 April 2018
+
+\end{enumerate}
+
+\chapter{Appendix}
+\section{Glossary}
+
+\begin{enumerate}
+  \item \textbf{LaTeX} - Is a mark up language specially suited for
+scientific documents.
+  \item \textbf{Bibliotheca} - Collection of books.
+  \item \textbf{Engineering} - The branch of science and technology concerned with the design, building, and use of structures.
+  \item \textbf{Recommendation} - The action of proposing or endorsing something or someone.
+  \item \textbf{Abstract} - Summary of the contents of a book, article, or speech.
+  \item \textbf{Literature Survey} - A literature review of a text of a scholarly paper, which includes the current knowledge including substantive findings, as well as theoretical and methodological contributions to a particular topic.
+  \item \textbf{Methodology} - A system of methods used in a particular area of study or activity.
+  \item \textbf{Schema} - A representation or an outline of a model.
+  \item \textbf{Collaborative} - Produced by or involving two or more parties working together.
+  \item \textbf{Problem Definition} - An inquiry starting from given conditions to investigate or demonstrate a fact, result, or law.
+  \item \textbf{Scope} - The extent of the area or subject matter that something deals with or to which it is relevant.
+  \item \textbf{Repository} - A central location in which data is stored and managed.
+  \item \textbf{Supplementary} - Complementing or Enhancing an object.
+  \item \textbf{Data Mining} - The practice of examining large pre-existing databases in order to generate new information.
+  \item \textbf{Gauge} - Estimate or determine the amount, level, or volume of
+  \item \textbf{Gantt Chart} - A chart in which a series of horizontal lines shows the amount of work done or production completed in certain periods of time in relation to the amount planned for those periods.
+  \item \textbf{Pruning} - Remove (superfluous or unwanted parts) from something.
+  \item \textbf{Threshold} - The magnitude or intensity that must be exceeded for a certain reaction, phenomenon, result, or condition to occur or be manifested.
+  \item \textbf{Modeling} - Use (a system, procedure, etc.) as an example to follow or imitate.
+  \item \textbf{Sentiment Analysis} - The process of computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer's attitude towards a particular topic, product, etc. is positive, negative, or neutral.
+\end{enumerate}
+
+\section{Acronyms}
+\begin{enumerate}
+  \item \textbf{UML}  - Unified Modelling Language
+  \item \textbf{ER}   - Entity Relationship Diagram
+  \item \textbf{PHP}  - Hypertext Preprocessor
+  \item \textbf{SQL}  - Sequential Query Language
+  \item \textbf{CSS}  - Cascading Style Sheets
+  \item \textbf{HTML} - Hypertext Markup Language
+  \item \textbf{IEEE} - Institute of Electrical and Electronics Engineers
+  \item \textbf{RAKE} - Rapid Abstraction Keyword Extraction
+  \item \textbf{DFD}  - Data Flow Diagram
+  \item \textbf{RFID} - Radio frequency identification
+  \item \textbf{ACM}  - Association for Computing Machinery
+  \item\textbf{COCOMO}- Constructive Cost Model
+  \item \textbf{KLOC} - Kilo line of Code
+  \item \textbf{SLOC} - Source line of Code
+  \item \textbf{UI}   - User Interface
+\end{enumerate}
+
+\section{Paper Published}
+\begin{enumerate}
+  \item Yash Trivedi, Kartik Kansaria, Saurabh Joshi, Prof. Deepali Vora ,``LibX - An Automated Bibliotheca'', IEEE Conference on ICOISS(International Conference on Intelligent Sustainable Systems), 2017.
+\end{enumerate}
+ \par The paper published is attached as a document on the next page.\\
+ 
+\pagebreak 
+ 
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includepdf[pages=1]{PaperLibX.pdf}
+ \end{figure}
+ 
+ \pagebreak 
+ 
+ \FloatBarrier
+\begin{figure}
+    \centering
+    \includepdf[pages=2]{PaperLibX.pdf}
+ \end{figure}
+ 
+ \pagebreak 
+ 
+ \FloatBarrier
+\begin{figure}
+    \centering
+    \includepdf[pages=3]{PaperLibX.pdf}
+ \end{figure}
+ 
+ \pagebreak 
+ 
+ \FloatBarrier
+\begin{figure}
+    \centering
+    \includepdf[pages=4]{PaperLibX.pdf}
+ \end{figure}
+
+\pagebreak 
+ 
+ \FloatBarrier
+\begin{figure}
+    \centering
+    \includepdf[pages=5]{PaperLibX.pdf}
+ \end{figure}
+ 
+
+\end{document}
+
+
+
